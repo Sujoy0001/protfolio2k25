@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative flex flex-col items-center justify-center min-h-screen text-center text-white bg-gradient-to-b from-gray-900 to-black px-4">
+    <!-- Profile Picture with Animation -->
+    <div class="relative z-10 group">
+        <div class="relative w-40 h-40 rounded-full border-4 border-gray-700 shadow-xl overflow-hidden transition-all duration-500 group-hover:border-green-500">
+            <img src="{{aboutinfo.profile_image.url}}" alt="Profile Picture"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="absolute -inset-4 rounded-full border-2 border-green-500 opacity-0 group-hover:opacity-100 animate-pulse pointer-events-none transition-opacity duration-300"></div>
+    </div>
+
+    <!-- Status Badge -->
+    <div class="mt-7 px-3 py-1 bg-green-900/50 rounded-full backdrop-blur-sm border border-green-500/50">
+        <p class="text-green-400 text-sm font-medium flex items-center">
+            <span class="relative flex h-2 w-2 mr-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            Available for work
+        </p>
+    </div>
+
+    <!-- Name & Role -->
+    <div class="mt-6 max-w-2xl">
+        <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">{{ aboutinfo.name }}</h1>
+        <p class="text-xl text-gray-300 mt-4 leading-relaxed">{{aboutinfo.about}}</p>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="flex flex-wrap justify-center gap-8 mt-10 text-gray-300">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white">{{ total_projects }}+</h2>
+            <p class="text-gray-400 text-lg">Projects</p>
+        </div>
+        <div class="hidden md:block border-l border-gray-700 h-16 self-center"></div>
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white">{{ total_experience }}+</h2>
+            <p class="text-gray-400 text-lg">Client Work</p>
+        </div>
+        <div class="hidden md:block border-l border-gray-700 h-16 self-center"></div>
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white">{{ aboutinfo.experience_year }}+</h2>
+            <p class="text-gray-400 text-lg">Years Experience</p>
+        </div>
+    </div>
+
+    <!-- Contact Button -->
+    <div class="mt-10 group flex items-center justify-center">
+        <a href="#contact"
+           class="relative px-8 py-3 bg-white text-black rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:bg-gray-300 hover:shadow-xl hover:scale-105">
+            <span class="relative z-10 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                Contact Me
+            </span>
+            <span class="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-1"></span>
+        </a>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-0 animate-bounce border-2 border-gray-700 rounded-full p-2 bg-gray-800/50">
+        <a href="#about" class="text-white text-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- About & Education Section -->
+<section id="about" class="py-10 px-4 sm:px-6 lg:px-8 bg-black">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- About Card -->
+            <div class="flex-1 p-8 rounded-xl shadow-2xl hover:shadow-green-500/10 transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-2 h-8 bg-green-500 rounded-full mr-3"></div>
+                    <h1 class="text-3xl font-bold">More about <span class="text-green-400">myself</span></h1>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">{{ aboutinfo.bio }}</p>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-300 font-medium shadow-md">
+                    Get In Touch
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Education Card -->
+            <div class="flex-1 p-8 rounded-xl shadow-2xl hover:shadow-blue-500/10 transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-2 h-8 bg-blue-500 rounded-full mr-3"></div>
+                    <h1 class="text-3xl font-bold">My <span class="text-blue-400">Education</span></h1>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-2">
+                        <h2 class="text-xl font-semibold text-white">{{ aboutinfo.degree }}</h2>
+                        <p class="text-blue-300 mt-1">{{ aboutinfo.institution }}</p>
+                        <div class="flex items-center text-gray-400 mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            {{ aboutinfo.location}}
+                        </div>
+                        <div class="flex items-center text-gray-400 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+                            {{ aboutinfo.start_date }} - {{ aboutinfo.end_date }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-10 px-4 sm:px-6 lg:px-8 bg-black">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">My <span class="text-green-400">Projects</span></h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Here are some of my recent works that showcase my skills and expertise</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in projects|slice:":3" %}
+            <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-green-500/20 transition-shadow duration-500">
+                <div class="h-64 overflow-hidden">
+                    <img src="{{ project.image.url }}" alt="{{ project.project_name }}" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">{{ project.project_name }}</h3>
+                    <p class="text-gray-300 mb-4">{{ project.short_description|default:project.project_type }}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        {% for tech in project.technologies_used.all|slice:":3" %}
+                        <span class="px-3 py-1 bg-gray-800/80 text-gray-300 rounded-full text-xs">{{ tech.name }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ project.project_link }}" target="_blank" class="inline-flex items-center text-green-400 hover:text-green-300 font-medium transition-colors duration-300">
+                        View Project
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="/projects" class="inline-flex items-center px-6 py-3 border border-gray-700 hover:border-green-500 text-white rounded-lg transition-all duration-300 font-medium group">
+                View All Projects
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills & Experience Section -->
+<section class="w-2/3 flex items-center py-10 px-10 sm:px-6 lg:px-8 bg-black m-auto">
+    <div class="max-w-6xl mx-auto">
+        <!-- Title with decorative elements -->
+        <div class="text-center mb-16 relative">
+            <h2 class="text-4xl font-bold inline-block relative">
+                <span class="relative z-10">Skills & <span class="text-blue-400">Experience</span></span>
+                <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full z-0"></span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mt-4">Technologies I work with and my professional journey</p>
+        </div>
+
+        <!-- Skills Cloud -->
+        <div class="mb-20">
+            <div class="bg-gray-950/50 p-8 rounded-xl backdrop-blur-sm border border-gray-700">
+                <div class="flex flex-wrap justify-center gap-4">
+                    {% for skill in skills %}
+                    <span class="px-4 py-2 bg-gray-800 hover:bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full text-sm font-medium shadow-md transition-all duration-300 hover:scale-105 cursor-default">
+                        {{ skill }}
+                    </span>
+                    {% empty %}
+                    <p class="text-gray-400">No skills added yet.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        
+            <!-- Timeline line -->
+            <div class="mt-10 max-w-3xl w-full"></div>
+            
+            {% for experience in exprate %}
+           
+                <div class="flex justify-between py-3 border-b border-gray-700">
+                    <span class="text-gray-300">{{experience.job_title}}</span>
+                    <span class="text-white">{{experience.company_name}}</span>
+                    <span class="text-gray-400">{{experience.start_date}} – {{experience.end_date}}</span>
+                </div>
+           
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-10 px-4 sm:px-6 lg:px-8 bg-black h-auto">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Frequently Asked <span class="text-green-400">Questions</span></h2>
+            <p class="text-xl text-gray-400">Find answers to common questions about my services and process</p>
+        </div>
+        
+        <div class="space-y-5">
+            <!-- FAQ Item 1 -->
+            <div class="group bg-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:bg-gray-700/50">
+                <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                    <h3 class="text-xl font-semibold text-white group-hover:text-green-400 transition-colors duration-300">
+                        Who is {{ aboutinfo.name.split.0 }}?
+                    </h3>
+                    <svg class="w-6 h-6 text-gray-400 group-hover:text-green-400 transition-transform duration-300 transform group-focus:-rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="px-6 pb-14 pt-0 max-h-0 overflow-hidden transition-all duration-300 group-focus:max-h-96">
+                    <p class="text-gray-300">
+                        {{ aboutinfo.name.split.0 }} is a full-stack developer specializing in Python, Django, and MERN, passionate about coding and problem-solving. 
+                    
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 2 -->
+            <div class="group bg-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:bg-gray-700/50">
+                <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                    <h3 class="text-xl font-semibold text-white group-hover:text-green-400 transition-colors duration-300">
+                        What services do you provide?
+                    </h3>
+                    <svg class="w-6 h-6 text-gray-400 group-hover:text-green-400 transition-transform duration-300 transform group-focus:-rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="px-6 pb-14 pt-0 max-h-0 overflow-hidden transition-all duration-300 group-focus:max-h-96">
+                    <p class="text-gray-300">
+                        I provide web development services, including frontend, backend, UI/UX design, and freelancing projects. I specialize in creating custom web applications tailored to your needs.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 3 -->
+            <div class="group bg-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:bg-gray-700/50">
+                <button class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                    <h3 class="text-xl font-semibold text-white group-hover:text-green-400 transition-colors duration-300">
+                        What is your development process?
+                    </h3>
+                    <svg class="w-6 h-6 text-gray-400 group-hover:text-green-400 transition-transform duration-300 transform group-focus:-rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="px-6 pb-8 pt-0 max-h-0 overflow-hidden transition-all duration-300 group-focus:max-h-96">
+                    <p class="text-gray-300 mb-4">
+                        My approach involves building scalable and efficient solutions, focusing on performance, design, and user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-16">
+            <h3 class="text-2xl font-bold text-white mb-4">Still have questions?</h3>
+            <p class="text-xl text-gray-400 mb-6">Feel free to reach out and I'll be happy to help</p>
+            <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+                Contact Me
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
