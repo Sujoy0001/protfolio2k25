@@ -33,7 +33,7 @@
     <div class="flex flex-wrap justify-center gap-8 mt-10 text-gray-300">
         <div class="text-center">
             <h2 class="text-4xl font-bold text-white">{{ total_projects }}+</h2>
-            <p class="text-gray-400 text-lg">Projects</p>
+            <p class="text-gray-400 text-lg">Projects Work</p>
         </div>
         <div class="hidden md:block border-l border-gray-700 h-16 self-center"></div>
         <div class="text-center">
@@ -49,7 +49,7 @@
 
     <!-- Contact Button -->
     <div class="mt-10 group flex items-center justify-center">
-        <a href="#contact"
+        <a href="{%  url 'contact' %}"
            class="relative px-8 py-3 bg-white text-black rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:bg-gray-300 hover:shadow-xl hover:scale-105">
             <span class="relative z-10 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -83,7 +83,7 @@
                     <h1 class="text-3xl font-bold">More about <span class="text-green-400">myself</span></h1>
                 </div>
                 <p class="text-gray-300 text-lg leading-relaxed mb-6">{{ aboutinfo.bio }}</p>
-                <a href="#contact" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-300 font-medium shadow-md">
+                <a href="{%  url 'contact' %}" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-300 font-medium shadow-md">
                     Get In Touch
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -276,7 +276,7 @@
         <div class="text-center mt-16">
             <h3 class="text-2xl font-bold text-white mb-4">Still have questions?</h3>
             <p class="text-xl text-gray-400 mb-6">Feel free to reach out and I'll be happy to help</p>
-            <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+            <a href="{%  url 'contact' %}" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
                 Contact Me
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />

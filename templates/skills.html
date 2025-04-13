@@ -1,23 +1,30 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="container mx-auto p-5">
-        <h1 class="text-3xl font-bold text-center mb-5">My Skills</h1>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {% for skill in skills %}
-                <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
-                    <img src="{{ skill.skills_img.url }}" alt="{{ skill.skills_name }}" class="w-16 h-16 object-contain">
-                    <p class="mt-2 font-semibold">{{ skill.skills_name }}</p>
-                </div>
-            {% endfor %}
-        </div>
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-24">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-100 dark:text-white mb-4">My Skills</h1>
+        <p class="text-xl text-gray-400 dark:text-gray-400 max-w-2xl mx-auto">
+            Technologies and tools I'm proficient with and use regularly in my projects.
+        </p>
     </div>
-</body>
-</html>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {% for skill in skills %}
+        <div class="skill-card bg-gray-300 dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+            <div class="w-20 h-20 mb-4 flex items-center justify-center">
+                <img src="{{ skill.skills_img.url }}" alt="{{ skill.skills_name }}" class="max-w-full max-h-full object-contain">
+            </div>
+            <h3 class="text-lg font-medium text-center text-gray-900 dark:text-white">{{ skill.skills_name }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+.skill-card:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+</style>
+{% endblock %}
