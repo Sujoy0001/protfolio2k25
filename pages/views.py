@@ -20,7 +20,7 @@ def index(request):
     skills = extra_skills.objects.all()
     total_projects = Projects.count()
     total_experience = exprate.count()
-    return render(request, 'home.html', { 'aboutinfo': about_info2, 'projects': Projects, 'exprate': exprate, 'skills': skills, 'total_projects': total_projects, 'total_experience': total_experience })
+    return render(request, 'index.html', { 'aboutinfo': about_info2, 'projects': Projects, 'exprate': exprate, 'skills': skills, 'total_projects': total_projects, 'total_experience': total_experience })
 
 def projects(request):
     project_list = Project.objects.all()
