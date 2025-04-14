@@ -106,21 +106,6 @@
         closeMobileMenu.addEventListener("click", () => {
             mobileMenu.classList.add("hidden");
         });
-
-        // Card Tilt Effect
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const { offsetX, offsetY, target } = e;
-                const { offsetWidth, offsetHeight } = target;
-                const xPos = (offsetX / offsetWidth - 0.5) * 10;
-                const yPos = (offsetY / offsetHeight - 0.5) * 10;
-                card.style.transform = `rotateX(${yPos}deg) rotateY(${xPos}deg)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-            });
-        });
     </script>
 </body>
 </html>
