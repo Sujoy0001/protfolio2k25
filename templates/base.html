@@ -1,113 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujoy || Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+    <!-- Primary Meta Tags -->
+    <title>Sujoy | Full-Stack Web Developer Portfolio</title>
+    <meta name="title" content="Sujoy | Full-Stack Web Developer Portfolio" />
+    <meta
+      name="description"
+      content="Explore Sujoy's full-stack developer portfolio featuring responsive design, live projects, smooth animations, and real-time features. Built with React, Tailwind CSS, and Django."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sujoygarai.site/" />
+    <meta
+      property="og:title"
+      content="Sujoy | Full-Stack Web Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore Sujoy's full-stack developer portfolio featuring responsive design, live projects, smooth animations, and real-time features. Built with React, Tailwind CSS, and Django."
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:url" content="https://sujoygarai.site/" />
+    <meta
+      property="twitter:title"
+      content="Sujoy | Full-Stack Web Developer Portfolio"
+    />
+    <meta
+      property="twitter:description"
+      content="Explore Sujoy's full-stack developer portfolio featuring responsive design, live projects, smooth animations, and real-time features. Built with React, Tailwind CSS, and Django."
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .project-card {
-            transition: transform 0.3s ease-out;
-        }
+      .project-card {
+        transition: transform 0.3s ease-out;
+      }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1596452346930997"
-     crossorigin="anonymous"></script>
-</head>
-<body class="bg-black text-white">
-
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1596452346930997"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-black text-white">
     <!-- HEADER -->
-    <header class="bg-gray-900 fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 md:px-56 md:py-5 shadow-md z-50">
-        <!-- Logo -->
-        <div class="flex items-center">
-            <a href="{% url 'index' %}">
-                <span class="text-3xl font-semibold">Portfolio</span>
-            </a>
-        </div>
+    <header
+      class="bg-gray-900 fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 md:px-56 md:py-5 shadow-md z-50"
+    >
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="{% url 'index' %}">
+          <span class="text-3xl font-semibold">Portfolio</span>
+        </a>
+      </div>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-6">
-            <a href="{% url 'projects_list' %}" class="text-gray-300 hover:text-white transition">Projects</a>
-            <a href="{% url 'skills_page' %}" class="text-gray-300 hover:text-white transition">Skills</a>
-            <a href="{% url 'review' %}" class="text-gray-300 hover:text-white transition">Reviews</a>
-            <a href="{% url 'example' %}" class="text-gray-300 hover:text-white transition">Certifications</a>
-        </nav>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a
+          href="{% url 'projects_list' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Projects</a
+        >
+        <a
+          href="{% url 'skills_page' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Skills</a
+        >
+        <a
+          href="{% url 'review' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Reviews</a
+        >
+        <a
+          href="{% url 'example' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Certifications</a
+        >
+      </nav>
 
-        <!-- Desktop Button -->
-        <div class="hidden md:block">
-            <a href="{% url 'contact' %}">
-                <button class="bg-gray-800 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-gray-700 transition">
-                    ✨ Contact Me
-                </button>
-            </a>
-        </div>
+      <!-- Desktop Button -->
+      <div class="hidden md:block">
+        <a href="{% url 'contact' %}">
+          <button
+            class="bg-gray-800 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-gray-700 transition"
+          >
+            ✨ Contact Me
+          </button>
+        </a>
+      </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="md:hidden text-white text-2xl focus:outline-none" id="mobile-menu-button" title="Open mobile menu">
-            ☰
-        </button>
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="md:hidden text-white text-2xl focus:outline-none"
+        id="mobile-menu-button"
+        title="Open mobile menu"
+      >
+        ☰
+      </button>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-40 hidden">
-        <div class="flex justify-end p-6">
-            <button class="text-white text-3xl" id="close-mobile-menu" title="Close mobile menu">✕</button>
-        </div>
-        <nav class="flex flex-col items-center space-y-6 text-lg mt-10">
-            <a href="{% url 'projects_list' %}" class="text-gray-300 hover:text-white transition">Projects</a>
-            <a href="{% url 'skills_page' %}" class="text-gray-300 hover:text-white transition">Skills</a>
-            <a href="{% url 'review' %}" class="text-gray-300 hover:text-white transition">Reviews</a>
-            <a href="{% url 'example' %}" class="text-gray-300 hover:text-white transition">Certifications</a>
-            <a href="{% url 'contact' %}">
-                <button class="mt-6 bg-gray-800 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">
-                    ✨ Contact Me
-                </button>
-            </a>
-        </nav>
+    <div
+      id="mobile-menu"
+      class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-40 hidden"
+    >
+      <div class="flex justify-end p-6">
+        <button
+          class="text-white text-3xl"
+          id="close-mobile-menu"
+          title="Close mobile menu"
+        >
+          ✕
+        </button>
+      </div>
+      <nav class="flex flex-col items-center space-y-6 text-lg mt-10">
+        <a
+          href="{% url 'projects_list' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Projects</a
+        >
+        <a
+          href="{% url 'skills_page' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Skills</a
+        >
+        <a
+          href="{% url 'review' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Reviews</a
+        >
+        <a
+          href="{% url 'example' %}"
+          class="text-gray-300 hover:text-white transition"
+          >Certifications</a
+        >
+        <a href="{% url 'contact' %}">
+          <button
+            class="mt-6 bg-gray-800 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition"
+          >
+            ✨ Contact Me
+          </button>
+        </a>
+      </nav>
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="mt-10">
-        {% block content %}
-        {% endblock %}
-    </main>
+    <main class="mt-10">{% block content %} {% endblock %}</main>
 
     <!-- FOOTER -->
     <footer class="bg-black text-white py-10 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-sm italic text-gray-400 mb-4">— Reach out anytime —</p>
-            <h2 class="text-4xl font-semibold">
-                Let’s Stay <span class="italic text-gray-400">Connected</span>
-            </h2>
-            <p class="text-gray-400 mt-4 max-w-lg mx-auto">
-                Got questions or want to collaborate? Feel free to reach out—I'm open to new projects or just a casual chat!
-            </p>
-            <p class="text-gray-400 mt-4">sujoycode999@gmail.com</p>
-            <div class="mt-6">
-                <a href="{% url 'contact' %}" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 hover:bg-gray-800 transition 
-                   border border-gray-700 shadow-lg shadow-gray-900">
-                    <span>↗</span> Contact Me
-                </a>
-            </div>
+      <div class="max-w-4xl mx-auto">
+        <p class="text-sm italic text-gray-400 mb-4">— Reach out anytime —</p>
+        <h2 class="text-4xl font-semibold">
+          Let’s Stay <span class="italic text-gray-400">Connected</span>
+        </h2>
+        <p class="text-gray-400 mt-4 max-w-lg mx-auto">
+          Got questions or want to collaborate? Feel free to reach out—I'm open
+          to new projects or just a casual chat!
+        </p>
+        <p class="text-gray-400 mt-4">sujoycode999@gmail.com</p>
+        <div class="mt-6">
+          <a
+            href="{% url 'contact' %}"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 hover:bg-gray-800 transition border border-gray-700 shadow-lg shadow-gray-900"
+          >
+            <span>↗</span> Contact Me
+          </a>
         </div>
-        <div class="mt-10 text-gray-500 text-sm">
-            © 2024 Sujoy Template
-        </div>
+      </div>
+      <div class="mt-10 text-gray-500 text-sm">© 2024 Sujoy Template</div>
     </footer>
 
     <!-- SCRIPT -->
     <script>
-        // Toggle mobile menu visibility
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const closeMobileMenu = document.getElementById("close-mobile-menu");
+      // Toggle mobile menu visibility
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
 
-        mobileMenuButton.addEventListener("click", () => {
-            mobileMenu.classList.remove("hidden");
-        });
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+      });
 
-        closeMobileMenu.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-        });
+      closeMobileMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
     </script>
-</body>
+  </body>
 </html>
