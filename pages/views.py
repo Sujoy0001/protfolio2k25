@@ -121,3 +121,9 @@ def contact(request):
 
     return render(request, 'contact.html')
 
+def review(request):
+    # Get all work experience entries ordered by start date (newest first)
+    experiences = experience.objects.all()
+    
+    return render(request, 'reviews.html', {'reviews': experiences})
+
