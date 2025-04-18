@@ -28,3 +28,4 @@ Welcome to the official portfolio website of **Sujoy Garai**, a passionate and c
 
 ## 📁 Project Structure (Simplified)
 
+![screencapture-protfolio-oynb-onrender-2025-04-14-13_03_26](https://github.com/user-attachments/assets/d1afa4b5-b62b-4237-89ae-62b8849a7f09)
