@@ -15,14 +15,7 @@ class AboutMe(models.Model):
     experience_year = models.IntegerField(default=0, help_text="Years of experience in the field")
     
     
-    # some extra details
     
-    # my_email = models.EmailField()
-    # my_phone = models.CharField(max_length=15)
-    # my_location = models.CharField(max_length=100)
-    # my_github = models.URLField()
-    # my_linkedin = models.URLField()
-    # my_twitter = models.URLField()
 
     def __str__(self):
         return self.name
