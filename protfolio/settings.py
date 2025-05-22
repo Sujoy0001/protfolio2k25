@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'pages',
+    'reviews',
 ]
 
 MIDDLEWARE = [
